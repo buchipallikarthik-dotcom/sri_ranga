@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sri Ranga Property and Facility Solutions</title>
+<meta name="description" content="Property management and facility services for residential, commercial and institutional properties.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFFFF; --grey:#F5F5F7; --dark:#1D1D1F; --text:#1D1D1F; --muted:#6E6E73;
+    --blue:#0071E3; --blue-dark:#0058B0; --line:#D2D2D7;
+    --f:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Inter","Helvetica Neue",Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--f);color:var(--text);background:var(--bg);line-height:1.5;font-size:1.0625rem;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  :focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+  /* translucent nav */
+  header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.8);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,.08)}
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:52px}
+  .brand{font-weight:600;font-size:.95rem;text-decoration:none;letter-spacing:-.01em}
+  nav{display:flex;gap:26px}
+  nav a{text-decoration:none;font-size:.85rem;color:#424245}
+  nav a:hover{color:var(--text)}
+
+  /* hero */
+  .hero{text-align:center;padding:96px 0 88px}
+  .hero p.pre{font-size:1.3rem;font-weight:600;color:var(--muted)}
+  h1{font-weight:700;font-size:clamp(2.6rem,7.5vw,5.6rem);line-height:1.04;letter-spacing:-.03em;max-width:13ch;margin:12px auto 22px}
+  .lead{max-width:44ch;margin:0 auto;font-size:clamp(1.15rem,2.2vw,1.45rem);line-height:1.4;color:var(--muted);letter-spacing:-.01em}
+  .links{margin-top:30px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;align-items:center}
+  .pill{display:inline-block;background:var(--blue);color:#fff;text-decoration:none;padding:12px 24px;border-radius:980px;font-size:1.0625rem}
+  .pill:hover{background:var(--blue-dark)}
+  .ghost{color:var(--blue);text-decoration:none;padding:12px 8px;font-size:1.0625rem}
+  .ghost:hover{text-decoration:underline}
+  .hero>.wrap>*{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+  .hero>.wrap>*:nth-child(2){animation-delay:.08s}
+  .hero>.wrap>*:nth-child(3){animation-delay:.16s}
+  .hero>.wrap>*:nth-child(4){animation-delay:.24s}
+  @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+  /* properties band */
+  .serve{background:var(--grey);padding:34px 0}
+  .serve .wrap{display:flex;gap:10px 34px;flex-wrap:wrap;justify-content:center;align-items:baseline}
+  .serve h2{font-size:.95rem;font-weight:600;color:var(--muted)}
+  .serve ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px 28px;justify-content:center}
+  .serve li{font-size:1.02rem;font-weight:500}
+  .serve li span{color:var(--muted);font-weight:400;font-size:.9rem;margin-left:6px}
+
+  section{padding:110px 0}
+  .head{text-align:center;margin-bottom:56px}
+  h2.title{font-weight:700;font-size:clamp(2rem,5vw,3.5rem);line-height:1.07;letter-spacing:-.025em;max-width:18ch;margin:0 auto}
+  .intro{margin:16px auto 0;max-width:48ch;font-size:1.25rem;line-height:1.4;color:var(--muted)}
+
+  /* bento tiles */
+  .bento{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+  .tile{background:var(--grey);border-radius:28px;padding:36px 34px 34px;grid-column:span 2;min-height:360px;display:flex;flex-direction:column}
+  .tile.wide{grid-column:span 3}
+  .tile.full{grid-column:1/-1}
+  .tile.dark{background:var(--dark);color:#F5F5F7}
+  .tile h3{font-size:1.7rem;font-weight:700;letter-spacing:-.02em;line-height:1.12}
+  .tile p{margin-top:8px;color:var(--muted);font-size:1.05rem;line-height:1.4}
+  .tile.dark p{color:#A1A1A6}
+  .tile ul{list-style:none;margin-top:auto;padding-top:24px}
+  .tile li{padding:9px 0;border-top:1px solid var(--line);font-size:1rem}
+  .tile.dark li{border-color:#424245}
+
+  /* process */
+  .process{background:var(--dark);color:#F5F5F7}
+  .process .intro{color:#A1A1A6}
+  .steps{list-style:none;counter-reset:n;display:grid;grid-template-columns:repeat(4,1fr);gap:40px}
+  .steps li{counter-increment:n}
+  .steps li::before{content:counter(n);display:block;font-weight:700;font-size:4.2rem;line-height:1;letter-spacing:-.04em;color:#fff;margin-bottom:14px}
+  .steps h3{font-size:1.3rem;font-weight:600;letter-spacing:-.01em}
+  .steps p{margin-top:6px;color:#A1A1A6;font-size:1.02rem;line-height:1.45}
+
+  /* about */
+  .about{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:start}
+  .about p{margin-bottom:18px;font-size:1.2rem;line-height:1.45;color:#424245;max-width:34em}
+  dl{background:var(--grey);border-radius:28px;padding:14px 32px}
+  dl div{padding:14px 0;border-bottom:1px solid var(--line)}
+  dl div:last-child{border-bottom:0}
+  dt{font-size:.88rem;color:var(--muted)}
+  dd{font-weight:600}
+  .todo{background:#E8F1FD;color:#0B4A9E;padding:2px 8px;border-radius:6px;font-weight:500}
+
+  /* contact */
+  .contact{background:var(--grey);text-align:center}
+  .contact dl{background:#fff;max-width:760px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;column-gap:48px;text-align:left}
+  .contact dl div:nth-last-child(2){border-bottom:0}
+
+  footer{background:var(--grey);color:var(--muted);font-size:.8rem;padding:22px 0;border-top:1px solid var(--line)}
+
+  @media(max-width:900px){
+    .bento{grid-template-columns:1fr 1fr}
+    .tile,.tile.wide{grid-column:span 1;min-height:320px}
+    .bento .tile:nth-child(5){grid-column:1/-1}
+    .steps{grid-template-columns:1fr 1fr;row-gap:48px}
+    .about{grid-template-columns:1fr;gap:36px}
+  }
+  @media(max-width:620px){
+    nav{gap:16px}
+    .bento{grid-template-columns:1fr}
+    .tile{min-height:0}
+    .steps{grid-template-columns:1fr}
+    .contact dl{grid-template-columns:1fr}
+    .contact dl div:nth-last-child(2){border-bottom:1px solid var(--line)}
+    section{padding:76px 0}
+    .hero{padding:64px 0 60px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .hero>.wrap>*{animation:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body id="top">
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top">Sri Ranga Property and Facility Solutions</a>
+    <nav aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#method">How we work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="hero">
+  <div class="wrap">
+    <p class="pre">Property management and facility services</p>
+    <h1>Well-kept buildings, handled by one accountable team.</h1>
+    <p class="lead">Sri Ranga Property and Facility Solutions looks after the day-to-day running of residential, commercial and institutional properties, so owners and managers can stop chasing vendors.</p>
+    <div class="links">
+      <a class="pill" href="#contact">Request a site visit</a>
+      <a class="ghost" href="#services">See our services &rsaquo;</a>
+    </div>
+  </div>
+</div>
+
+<div class="serve">
+  <div class="wrap">
+    <h2>Properties we serve</h2>
+    <ul>
+      <li>Apartment communities<span>Residential</span></li>
+      <li>Offices and business parks<span>Commercial</span></li>
+      <li>Schools and clinics<span>Institutional</span></li>
+      <li>Retail and showrooms<span>Commercial</span></li>
+      <li>Plots and vacant buildings<span>Holding care</span></li>
+    </ul>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="head">
+      <h2 class="title">Services under one contract.</h2>
+      <p class="intro">Take the full set or only what you need. Each service has a named supervisor and a written daily or weekly checklist.</p>
+    </div>
+    <div class="bento">
+      <article class="tile wide dark"><h3>Property management</h3><p>Day-to-day care of the building on the owner's behalf.</p>
+        <ul><li>Tenant and resident coordination</li><li>Rent and maintenance follow-up</li><li>Vendor and AMC management</li><li>Periodic inspection reports</li></ul></article>
+      <article class="tile wide"><h3>Housekeeping and cleaning</h3><p>Trained staff, supplies and supervision for common areas and offices.</p>
+        <ul><li>Daily and deep cleaning</li><li>Washroom and pantry care</li><li>Façade and glass cleaning</li><li>Waste segregation and disposal</li></ul></article>
+      <article class="tile"><h3>Technical maintenance</h3><p>Routine upkeep and quick repair of the building's working systems.</p>
+        <ul><li>Electrical and plumbing</li><li>Lifts, pumps and generators</li><li>HVAC servicing</li><li>Painting and minor civil work</li></ul></article>
+      <article class="tile dark"><h3>Security and manpower</h3><p>Guards, front-desk and support staff placed and managed for you.</p>
+        <ul><li>Security guards and supervisors</li><li>Reception and visitor management</li><li>Gardeners, drivers and helpers</li><li>Attendance and payroll handled by us</li></ul></article>
+      <article class="tile"><h3>Landscaping and pest control</h3><p>Green areas that stay green, and buildings that stay pest-free.</p>
+        <ul><li>Garden design and upkeep</li><li>Scheduled pest treatments</li><li>Water tank cleaning</li><li>Seasonal plantation</li></ul></article>
+      <article class="tile full"><h3>Facility audits and advice</h3><p>A clear view of what your property needs and what it costs.</p>
+        <ul><li>Condition survey and checklist</li><li>Maintenance budget planning</li><li>Vendor and contract review</li><li>Compliance and safety readiness</li></ul></article>
+    </div>
+  </div>
+</section>
+
+<section id="method" class="process">
+  <div class="wrap">
+    <div class="head">
+      <h2 class="title">From first visit to a steady routine.</h2>
+      <p class="intro">Every property starts the same way, so nothing is guessed.</p>
+    </div>
+    <ol class="steps">
+      <li><h3>Site visit</h3><p>We walk the property with you and note its condition, staffing and open complaints.</p></li>
+      <li><h3>Written plan</h3><p>You receive a scope, a staffing plan and a monthly cost before anything starts.</p></li>
+      <li><h3>Start of service</h3><p>Staff and supervisors are deployed, with checklists posted on site.</p></li>
+      <li><h3>Regular reporting</h3><p>You get a periodic report on work done, issues raised and money spent.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="head">
+      <h2 class="title">A local team that answers the phone.</h2>
+    </div>
+    <div class="about">
+      <div>
+        <p>Sri Ranga Property and Facility Solutions Private Limited is a registered company providing property and facility services. We handle the routine work of running a building so that owners, associations and businesses can focus on their own work.</p>
+        <p><span class="todo">[Add two or three sentences here about who started the company, when, and which areas or kinds of property you work with.]</span></p>
+        <p>Our approach is simple: clear scope, trained people, a named point of contact, and honest reporting.</p>
+      </div>
+      <dl>
+        <div><dt>Registered name</dt><dd>Sri Ranga Property and Facility Solutions Private Limited</dd></div>
+        <div><dt>Company type</dt><dd>Private Limited Company</dd></div>
+        <div><dt>CIN</dt><dd><span class="todo">[Add CIN number]</span></dd></div>
+        <div><dt>GSTIN</dt><dd><span class="todo">[Add GST number]</span></dd></div>
+        <div><dt>Service area</dt><dd><span class="todo">[Add city or districts]</span></dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="head">
+      <h2 class="title">Tell us about your property.</h2>
+      <p class="intro">Call or write with the address, the type of property and what you need. We will arrange a site visit.</p>
+    </div>
+    <dl>
+      <div><dt>Phone</dt><dd><span class="todo">[Add phone number]</span></dd></div>
+      <div><dt>Email</dt><dd><span class="todo">[Add email address]</span></dd></div>
+      <div><dt>Office</dt><dd><span class="todo">[Add office address]</span></dd></div>
+      <div><dt>Office hours</dt><dd><span class="todo">[Add days and hours]</span></dd></div>
+    </dl>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">&copy; 2026 Sri Ranga Property and Facility Solutions Private Limited. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
